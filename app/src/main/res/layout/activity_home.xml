@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".home" >
 
+    <!--TODO: Add an EditText widget to get search terms from the user. -->
     <Button
         android:id="@+id/search_button"
         android:layout_width="150dp"
