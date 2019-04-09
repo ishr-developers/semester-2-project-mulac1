@@ -1,8 +1,8 @@
 package com.example.android.finalproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,7 +17,7 @@ public class home extends AppCompatActivity {
 
         search_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent (home.this, MapsActivity.class));
+                startActivity(new Intent(getApplicationContext(), MapsActivity.class));
             }
         });
     }
