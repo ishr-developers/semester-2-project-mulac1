@@ -16,7 +16,11 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:mapquest_app_key="@string/map_quest_api_key" />
+        app:layout_constraintVertical_bias="0.0"
+        app:mapquest_app_key="aSd9IV1tuUerYF6Dj4xQYWiDajlUAr5a" />
+
+
 </android.support.constraint.ConstraintLayout>

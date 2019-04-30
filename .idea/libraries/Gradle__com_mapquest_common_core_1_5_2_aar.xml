@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mapquest:common-core:1.5.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/common-core-1.5.2.aar/4a4345669f115c7d3cfcf286bfc9a857/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/common-core-1.5.2.aar/4a4345669f115c7d3cfcf286bfc9a857/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
