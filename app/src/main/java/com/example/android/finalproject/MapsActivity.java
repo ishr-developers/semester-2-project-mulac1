@@ -30,8 +30,6 @@ public class MapsActivity extends AppCompatActivity {
     //TODO: Create a function to search MapQuest
 
 
-
-
     public void requestPermission() {
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
