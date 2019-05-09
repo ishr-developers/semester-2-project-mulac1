@@ -22,6 +22,10 @@ public class MapsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         MapQuest.start(getApplicationContext());
+
+        //TODO: Get the data from the intent.
+        //TODO: Build the URL and set the search.
+
         requestPermission();
 
         Button list_button =(Button) findViewById(R.id.listButton);
@@ -32,6 +36,9 @@ public class MapsActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    //TODO: Create a function to search MapQuest
 
 
     public void requestPermission() {

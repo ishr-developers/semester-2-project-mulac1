@@ -21,4 +21,8 @@ public class home extends AppCompatActivity {
             }
         });
     }
+
+
+    //TODO: Get the search terms and pass them to the Maps Activity.
+    //TODO: Then start the Maps Activity.
 }
