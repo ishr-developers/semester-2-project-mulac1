@@ -12,14 +12,24 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.finalproject.DataModel.Response;
+import com.example.android.finalproject.DataModel.Restaurant;
+import com.example.android.finalproject.DataModel.ResultsItem;
+import com.google.gson.Gson;
 import com.mapquest.mapping.MapQuest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private static final int REQUEST_LOCATION_PERMISSION = 1;
     String searchUrl;
+
+    public ArrayList<Restaurant> restaurantList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +108,24 @@ public class MapsActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String s) {
 
+        Gson gson = new Gson();
+        Response response = gson.fromJson(s, Response.class);
+
+        List<ResultsItem> resultsItemList = response.getResults();
+
+        for (ResultsItem item : resultsItemList){
+           String name = item.getName();
+           String street = item.getPlace().getProperties().getStreet();
+           String city = item.getPlace().getProperties().getCity();
+
+            Restaurant restaurant = new Restaurant(name, city, street);
+
+            restaurantList.add(restaurant);
+
+        }
+
+        displayInformation();
+
     }
 
     @Override
@@ -109,6 +137,19 @@ public class MapsActivity extends AppCompatActivity implements LoaderManager.Loa
     public  void  startLoader(){
         LoaderManager manager = getLoaderManager();
         manager.initLoader(1,null,this);
+    }
+
+
+    void displayInformation(){
+        TextView textView = findViewById(R.id.restaurant_text_view);
+
+        for(Restaurant restaurant:restaurantList);
+        String restaurantInfo = restaurant.name +"\n" + restaurant.city  + "\t" + restaurant.street + "\n";
+
+        textView.append(restaurantInfo);
+
+
+
     }
 
 }
