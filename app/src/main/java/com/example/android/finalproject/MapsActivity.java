@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +16,10 @@ import android.widget.Toast;
 
 import com.mapquest.mapping.MapQuest;
 
-public class MapsActivity extends AppCompatActivity {
+public class MapsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private static final int REQUEST_LOCATION_PERMISSION = 1;
+    String searchUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +28,16 @@ public class MapsActivity extends AppCompatActivity {
         MapQuest.start(getApplicationContext());
 
         //TODO: Get the data from the intent.
+
         //TODO: Build the URL and set the search.
+        Intent intent = getIntent();
+
+        searchUrl= intent.getStringExtra("URL");
+
 
         requestPermission();
+
+        startLoader();
 
         Button list_button =(Button) findViewById(R.id.listButton);
 
@@ -39,6 +50,8 @@ public class MapsActivity extends AppCompatActivity {
 
 
     //TODO: Create a function to search MapQuest
+
+
 
 
     public void requestPermission() {
@@ -75,4 +88,27 @@ public class MapsActivity extends AppCompatActivity {
     public void getLastLocation() {
         Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
     }
+
+    @NonNull
+    @Override
+    public Loader<String> onCreateLoader(int i, @Nullable Bundle bundle) {
+        return new DataDownloader(this,searchUrl);
+    }
+
+    @Override
+    public void onLoadFinished(@NonNull Loader<String> loader, String s) {
+
+    }
+
+    @Override
+    public void onLoaderReset(@NonNull Loader<String> loader) {
+
+    }
+
+
+    public  void  startLoader(){
+        LoaderManager manager = getLoaderManager();
+        manager.initLoader(1,null,this);
+    }
+
 }

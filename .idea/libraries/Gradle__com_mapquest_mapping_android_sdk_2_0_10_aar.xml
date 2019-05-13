@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.mapquest:mapping-android-sdk:2.0.10@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapping-android-sdk-2.0.10.aar/7e32b49792787c52dbddbb8649052606/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapping-android-sdk-2.0.10.aar/7e32b49792787c52dbddbb8649052606/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapping-android-sdk-2.0.10.aar/185e709c3ae50ceb991619f739a7beae/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapping-android-sdk-2.0.10.aar/185e709c3ae50ceb991619f739a7beae/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
